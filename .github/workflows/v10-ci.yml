@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: '16.x'
       - name: Install dependencies
-        run: yarn install --immutable --immutable-cache
+        run: yarn install --immutable
       - name: Check formatting of project files
         run: yarn format:diff
 
@@ -43,7 +43,7 @@ jobs:
         with:
           node-version: '16.x'
       - name: Install dependencies
-        run: yarn install --immutable --immutable-cache
+        run: yarn install --immutable
       - name: Lint JavaScript files
         run: yarn lint
       - name: Lint Sass files
@@ -65,7 +65,7 @@ jobs:
             */**/node_modules
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: yarn install --immutable --immutable-cache
+        run: yarn install --immutable
       - name: Build project
         run: yarn build
       - name: Check generated styles
@@ -91,7 +91,7 @@ jobs:
             */**/node_modules
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: yarn install --immutable --immutable-cache
+        run: yarn install --immutable
       - uses: dorny/paths-filter@v2.10.2
         id: filter
         with:
